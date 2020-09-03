@@ -23,7 +23,7 @@ Please fork this repository and answer any questions on this markdown document.
 
 * Write the commands to add 30GB disk space to a logical volume named "docker" that belongs to a logical group named "docker-group".
   * vgcreate docker-group /dev/sda6 /dev/sda7
-  * lvcreate -L 30GB -n docker docker-group
+  * lvcreate -L 30G -n docker docker-group
 
 * In the root of this repository, create a Bash script called "listit.sh", when executed, this script must do the following (in order):
     * Create a file called directories.list that contains the directory names only of the current directory.
@@ -53,4 +53,9 @@ Please fork this repository and answer any questions on this markdown document.
 
 # General
 * How would you ensure any change made to this Dockerfile is source controlled, approved, tested and deployed. Explain which tools you will use as if this was going into a production environment.
+
+  * I would ensure to create a pull request for default reviewers to check and verify the changes made before its merged into master. Create a branch to test the change that were added. This can be done utilizing tools like bitbucket, Github etc.
+  * Create a build for CI/CD pipeline to test on dev or UAT before the changes are implemented on prod. You can utilize tools like Bamboo, Teamcity, Jenkins or Github actions to deploy the new changes.
+  
+
 * Commit and push your changes.
