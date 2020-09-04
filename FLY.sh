@@ -12,7 +12,7 @@ yum install docker-ce
 docker ps -q --filter "name=ALFRED" | grep -q . && docker stop ALFRED && docker rm -fv ALFRED
 
 docker build -t mariadb -f Dockerfile  .
-docker run --name ALFRED -v /BATCAVE:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=$db_pass -d mariadb:tag
+docker run --name ALFRED -v /BATCAVE:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=$db_pass -e MYSQL_DATABASE=test_db -d mariadb:tag
 
 
 mysql --user=root -p $db_pass
